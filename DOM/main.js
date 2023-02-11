@@ -17,12 +17,12 @@ const quizes = [
     {
         id: 4,
         question: "4 + 4 = ?",
-        answers: [3, 4, 5, 6],
+        answers: [8, 7, 6, 5],
     },
     {
         id: 5,
         question: "5 + 5 = ?",
-        answers: [3, 4, 5, 6],
+        answers: [4, 6, 8, 10],
     },
 ];
 const btn = document.getElementById("btn")
@@ -58,10 +58,8 @@ btn.addEventListener("click", () =>{
             const input = answer.querySelector("input");
             if (index === randomIndex) {
                 input.checked = true;
-            } else {
-                input.checked = false;
-            }
-        });
-    });
+            } 
+        })
+    })
 })
 
