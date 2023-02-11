@@ -19,15 +19,12 @@ const quizes = [
         question: "4 + 4 = ?",
         answers: [8, 7, 6, 5],
     },
-    {
-        id: 5,
-        question: "5 + 5 = ?",
-        answers: [4, 6, 8, 10],
-    },
 ];
 const btn = document.getElementById("btn")
 const quizContainer = document.querySelector(".quiz-container");
 
+
+// render giao diện hết các quiz trong list
 function render() {
     let html = "";
     quizes.forEach(quiz => {
@@ -47,8 +44,10 @@ function render() {
     });
     quizContainer.innerHTML = html;
 }
+// hiển thị giao diện khi bắt đầu
 render()
 
+// thực hiện random kết quả
 btn.addEventListener("click", () =>{
     const quizItems = document.querySelectorAll(".quiz-item");
     quizItems.forEach(quizItem => {
