@@ -14,16 +14,54 @@ const quizes = [
         question: "3 + 3 = ?",
         answers: [3, 4, 5, 6],
     },
+    {
+        id: 4,
+        question: "4 + 4 = ?",
+        answers: [3, 4, 5, 6],
+    },
+    {
+        id: 5,
+        question: "5 + 5 = ?",
+        answers: [3, 4, 5, 6],
+    },
 ];
+const btn = document.getElementById("btn")
+const quizContainer = document.querySelector(".quiz-container");
 
-const btn = document.getElementById("btn");
-const quizItem = document.querySelectorAll(".quiz-item")
-const quizAnswerItem = document.querySelectorAll("quiz-answer-item")
-console.log(btn)
-console.log(quizItem)
+function render() {
+    let html = "";
+    quizes.forEach(quiz => {
+        html += `
+            <div class="quiz-item">
+                <h3>${quiz.question}</h3>
+                <div class="quiz-answer">
+        `;
+        quiz.answers.forEach(answer => {
+            html += `
+                <div class="quiz-answer-item">
+                    <input type="radio" name="${quiz.id}">
+                    <label>${answer}</label>
+                </div>
+            `;
+        });
+    });
+    quizContainer.innerHTML = html;
+}
+render()
+
 btn.addEventListener("click", () =>{
-    for (let i = 1; i <= quizItem.length; i++) {
-        let indexRandom = Math.floor(Math.random()*5)
-        quizAnswerItem[indexRandom].checked = true;
-    }
+    const quizItems = document.querySelectorAll(".quiz-item");
+    quizItems.forEach(quizItem => {
+        const answers = quizItem.querySelectorAll(".quiz-answer-item");
+        const randomIndex = Math.floor(Math.random()*4);
+        answers.forEach((answer, index) => {
+            const input = answer.querySelector("input");
+            if (index === randomIndex) {
+                input.checked = true;
+            } else {
+                input.checked = false;
+            }
+        });
+    });
 })
+
