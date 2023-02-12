@@ -39,7 +39,6 @@ function render(arr){
     ul.innerHTML = "";
     for (let i = 0; i < 10; i++) {
         const li = document.createElement("li");
-        console.log(arr[i].title)
         li.innerText = arr[i].title
         ul.insertAdjacentElement("afterbegin",li)
     }
@@ -48,7 +47,6 @@ function render(arr){
 // tiêu đề
 function title(title){
     const span = document.querySelector("span");
-    console.log(span);
     span.innerText = `${title}`;
 }
 
