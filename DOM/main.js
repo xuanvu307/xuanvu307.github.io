@@ -40,8 +40,8 @@ function render() {
                     <label>${answer}</label>
                 </div>
             `;
-        });
-    });
+        })
+    })
     quizContainer.innerHTML = html;
 }
 // hiển thị giao diện khi bắt đầu
